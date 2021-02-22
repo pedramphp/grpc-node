@@ -702,6 +702,7 @@ export class Subchannel {
      * error here.
      */
     try {
+      this.startConnectingInternal();
       http2Stream = this.session!.request(headers);
     } catch (e) {
       this.transitionToState(
